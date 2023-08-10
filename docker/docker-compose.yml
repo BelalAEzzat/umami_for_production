@@ -2,7 +2,7 @@
 version: '3'
 services:
   umami:
-    image: ghcr.io/umami-software/umami:postgresql-latest
+    image: ghcr.io/mikecao/umami:postgresql-v1.33.2
     ports:
       - "8080:3000"
     env_file:
@@ -16,6 +16,7 @@ services:
     restart: always
   db:
     image: postgres:15-alpine
+    container_name: postgres_DB
     env_file:
       - .env
     volumes:
